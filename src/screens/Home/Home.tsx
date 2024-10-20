@@ -1,12 +1,17 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, TouchableOpacity } from 'react-native';
+
+
 
 import { styles } from './styles';
+import { BatImage } from '../../components/Image/BatImage';
+import { Button } from '../../components/Button/Button';
 
 export function Home() {
   return (
     <View style={styles.container}>
-        <Text>Works Home!!</Text>
+        <BatImage />
+        <Button />
     </View>
   );
 }
