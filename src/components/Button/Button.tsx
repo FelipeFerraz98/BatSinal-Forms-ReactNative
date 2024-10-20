@@ -1,14 +1,22 @@
 import React from 'react';
-import { View, Text, Pressable } from 'react-native';
+import { View, Text, Pressable, GestureResponderEvent } from 'react-native';
 
 import { styles } from './styles';
 
-export function Button() {
+interface ButtonProps {
+  title: string;
+  onPress: (event: GestureResponderEvent) => void;
+}
+
+export function Button({ title, onPress }: ButtonProps) {
   return (
     <View>
-        <Pressable style={styles.button}>
-          <Text style={styles.text}>Ativar BatSinal</Text>
-        </Pressable>
+      <Pressable 
+        style={styles.button}
+        onPress={onPress}
+      >
+        <Text style={styles.text}>{title}</Text>
+      </Pressable>
     </View>
   );
 }
